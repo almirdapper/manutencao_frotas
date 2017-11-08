@@ -5,12 +5,16 @@
  */
 package View;
 
+import java.util.ArrayList;
+import classe.Funcioario;
+
 /**
  *
  * @author ADM
  */
 public class CadastroUsuarios extends javax.swing.JFrame {
-
+    ArrayList<Funcioario>dadosFuncionaFuncioarios = new ArrayList<Funcioario>();
+    
     /**
      * Creates new form CadastroUsuarios
      */
@@ -192,6 +196,8 @@ public class CadastroUsuarios extends javax.swing.JFrame {
         Condutor  condutor = new Condutor();
         condutor.setVisible(true);
         this.dispose();
+        Funcioario funcioario = new Funcioario();
+        funcioario.setNomeUsuario(jTextField1.getText());
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
