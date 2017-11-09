@@ -2,7 +2,7 @@
 package Factory;
 
 import java.util.ArrayList;
-import classe.Funcioario;
+import classe.*;
 import Dao.*;
 import javax.swing.JOptionPane;
 
@@ -22,6 +22,24 @@ public class FacFuncionarios {
         funcioario.setFuncao(funcao);
         funcioario.setLogin(login);
         funcioario.setSenha(senha);             
+        arrayDadosFuncionario.add(funcioario);
+        for (Funcioario f : arrayDadosFuncionario){
+            //JOptionPane.showMessageDialog(null, f.getNomeUsuario() +"\n"+ f.getSituacao() +"\n"+ f.getFuncao()+"\n"+ f.getLogin()+"\n"+ f.getSenha());
+        }
+        daoFuncionarios.cadatrarFuncionarioBD(arrayDadosFuncionario);
+        
+      
+    }
+    
+    public void cadastrarCondutor( String nome ,String situacao,String funcao, String cnh, String categoriaCnh, String Telefone ){
+        
+        Condutor condutor = new Condutor();
+        
+        condutor.setNomeUsuario(nome);
+        condutor.setSituacao(situacao);
+        condutor.setFuncao(funcao);
+        condutor.setCnh(cnh);
+        condutor.setCategoriaCnh(categoriaCnh);             
         arrayDadosFuncionario.add(funcioario);
         for (Funcioario f : arrayDadosFuncionario){
             //JOptionPane.showMessageDialog(null, f.getNomeUsuario() +"\n"+ f.getSituacao() +"\n"+ f.getFuncao()+"\n"+ f.getLogin()+"\n"+ f.getSenha());

@@ -2,7 +2,7 @@ package classe;
 
 public class Condutor extends Funcioario {
 
-	private int cnh;
+	private String cnh;
 
 	private String categoriaCnh;
 
@@ -12,46 +12,77 @@ public class Condutor extends Funcioario {
 
 	private Condutor condutor;
 
+    /**
+     * @return the cnh
+     */
+    public String getCnh() {
+        return cnh;
+    }
+
+    /**
+     * @param cnh the cnh to set
+     */
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
+    }
+
+    /**
+     * @return the categoriaCnh
+     */
+    public String getCategoriaCnh() {
+        return categoriaCnh;
+    }
+
+    /**
+     * @param categoriaCnh the categoriaCnh to set
+     */
+    public void setCategoriaCnh(String categoriaCnh) {
+        this.categoriaCnh = categoriaCnh;
+    }
+
+    /**
+     * @return the celular
+     */
+    public int getCelular() {
+        return celular;
+    }
+
+    /**
+     * @param celular the celular to set
+     */
+    public void setCelular(int celular) {
+        this.celular = celular;
+    }
+
+    /**
+     * @return the situacao
+     */
+    public String getSituacao() {
+        return situacao;
+    }
+
+    /**
+     * @param situacao the situacao to set
+     */
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
+
+    /**
+     * @return the condutor
+     */
+    public Condutor getCondutor() {
+        return condutor;
+    }
+
+    /**
+     * @param condutor the condutor to set
+     */
+    public void setCondutor(Condutor condutor) {
+        this.condutor = condutor;
+    }
+
 	
 
-	public void cadastraCondutor(int cnh, String categoriaCnh, int celular, String situacao) {
-
-	}
-
-	public void operation1(int cnh, String categoriaCnh, int celular, String situacao) {
-
-	}
-
-	public void setCnh(int cnh) {
-
-	}
-
-	public int getCnh() {
-		return 0;
-	}
-
-	public void setCategoriaCnh(String categoriaCnh) {
-
-	}
-
-	public String getCategoriaCnh() {
-		return "";
-	}
-
-	public void setCelular(int celular) {
-
-	}
-
-	public int getCelular() {
-		return 0;
-	}
-
-	public void setSituacao(String situacao) {
-
-	}
-
-	public String getSituacao() {
-		return "";
-	}
-
+	
 }
