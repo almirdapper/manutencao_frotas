@@ -24,7 +24,7 @@ public class FacFuncionarios {
         funcioario.setSenha(senha);             
         arrayDadosFuncionario.add(funcioario);
         for (Funcioario f : arrayDadosFuncionario){
-            JOptionPane.showMessageDialog(null, f.getNomeUsuario() +"\n"+ f.getSituacao() +"\n"+ f.getFuncao()+"\n"+ f.getLogin()+"\n"+ f.getSenha());
+            //JOptionPane.showMessageDialog(null, f.getNomeUsuario() +"\n"+ f.getSituacao() +"\n"+ f.getFuncao()+"\n"+ f.getLogin()+"\n"+ f.getSenha());
         }
         daoFuncionarios.cadatrarFuncionarioBD(arrayDadosFuncionario);
         
@@ -32,5 +32,15 @@ public class FacFuncionarios {
     }
     
     
-    
+     public ArrayList buscarUsuario(int id){
+         
+         arrayDadosFuncionario =daoFuncionarios.buscarFuncionarioBD(id);
+         return arrayDadosFuncionario;
+     }
+     
+     
+     public ArrayList listarUsuario(){
+         arrayDadosFuncionario = daoFuncionarios.listarFuncionariosBD();
+         return arrayDadosFuncionario;
+     }
 }

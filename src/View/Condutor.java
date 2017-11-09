@@ -52,8 +52,11 @@ public class Condutor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Usuários");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setText("Nome do Usuário:");
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CNH:");
 
         jLabel3.setText("Categoria Cnh");

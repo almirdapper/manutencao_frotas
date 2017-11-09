@@ -52,6 +52,7 @@ public class CadastroVeiculos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Veiculos");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Veiculos:"));
 
         jLabel1.setText("Modelo Veiculo:");
