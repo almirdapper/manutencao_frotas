@@ -39,12 +39,29 @@ public class FacFuncionarios {
         condutor.setSituacao(situacao);
         condutor.setFuncao(funcao);
         condutor.setCnh(cnh);
-        condutor.setCategoriaCnh(categoriaCnh);             
+        condutor.setCategoriaCnh(categoriaCnh);         
+        
+        arrayDadosFuncionario.add(condutor);
+       
+        daoFuncionarios.cadatrarCondutorBD(arrayDadosFuncionario);
+        
+      
+    }
+    
+    public void alterarUsuario(int idUsuario,String nome ,String situacao,String funcao,String login,String senha){
+          funcioario = new Funcioario();
+       
+        funcioario.setIdUsuario(idUsuario);
+        funcioario.setNomeUsuario(nome);
+        funcioario.setSituacao(situacao);
+        funcioario.setFuncao(funcao);
+        funcioario.setLogin(login);
+        funcioario.setSenha(senha);             
         arrayDadosFuncionario.add(funcioario);
         for (Funcioario f : arrayDadosFuncionario){
             //JOptionPane.showMessageDialog(null, f.getNomeUsuario() +"\n"+ f.getSituacao() +"\n"+ f.getFuncao()+"\n"+ f.getLogin()+"\n"+ f.getSenha());
         }
-        daoFuncionarios.cadatrarFuncionarioBD(arrayDadosFuncionario);
+        daoFuncionarios.alterarFuncionarioBD(arrayDadosFuncionario);
         
       
     }
@@ -59,6 +76,11 @@ public class FacFuncionarios {
      
      public ArrayList listarUsuario(){
          arrayDadosFuncionario = daoFuncionarios.listarFuncionariosBD();
+         return arrayDadosFuncionario;
+     }
+     
+     public ArrayList listarCondutor(){
+         arrayDadosFuncionario = daoFuncionarios.listarCondutorBD();
          return arrayDadosFuncionario;
      }
 }
