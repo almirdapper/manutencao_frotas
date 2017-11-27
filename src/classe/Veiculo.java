@@ -2,86 +2,157 @@ package classe;
 
 public class Veiculo {
 
-	private int idVeiculo;
+    private int idVeiculo;
+    private String modelo;
+    private String marca;
+    private String placa;
+    private String ano;
+    private String descricao;
+    private String categoria;
+    private String tipo;
+    private String status;
+    private Manutencao manutencao;
 
-	private String placaVeiculo;
+    /**
+     * @return the idVeiculo
+     */
+    public int getIdVeiculo() {
+        return idVeiculo;
+    }
 
-	private String corVeiculo;
+    /**
+     * @param idVeiculo the idVeiculo to set
+     */
+    public void setIdVeiculo(int idVeiculo) {
+        this.idVeiculo = idVeiculo;
+    }
 
-	private int numeroPortas;
+    /**
+     * @return the modelo
+     */
+    public String getModelo() {
+        return modelo;
+    }
 
-	private String situacaoVeiculo;
+    /**
+     * @param modelo the modelo to set
+     */
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
 
-	private String categoria;
+    /**
+     * @return the marca
+     */
+    public String getMarca() {
+        return marca;
+    }
 
-	private String modelo;
+    /**
+     * @param marca the marca to set
+     */
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
-	private ModeloVeiculo modeloVeiculo;
+    /**
+     * @return the placa
+     */
+    public String getPlaca() {
+        return placa;
+    }
 
-	private TipoVeiculo tipoVeiculo;
+    /**
+     * @param placa the placa to set
+     */
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
 
-	
+    /**
+     * @return the ano
+     */
+    public String getAno() {
+        return ano;
+    }
 
-	private Manutencao manutencao;
+    /**
+     * @param ano the ano to set
+     */
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
 
-	private CategoriaVeiculo categoriaVeiculo;
+    /**
+     * @return the descricao
+     */
+    public String getDescricao() {
+        return descricao;
+    }
 
-	
+    /**
+     * @param descricao the descricao to set
+     */
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
-	public void setIdVeiculo(int idVeiculo) {
+    /**
+     * @return the categoria
+     */
+    public String getCategoria() {
+        return categoria;
+    }
 
-	}
+    /**
+     * @param categoria the categoria to set
+     */
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
-	public int getIdVeiculo() {
-		return 0;
-	}
+    /**
+     * @return the tipo
+     */
+    public String getTipo() {
+        return tipo;
+    }
 
-	public void setPlacaVeiculo(String placaVeiculo) {
+    /**
+     * @param tipo the tipo to set
+     */
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
-	}
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
 
-	public String getPlacaVeiculo() {
-		return "";
-	}
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public void setCorVeiculo(String corVeiculo) {
+    /**
+     * @return the manutencao
+     */
+    public Manutencao getManutencao() {
+        return manutencao;
+    }
 
-	}
-
-	public String getCorVeiculo() {
-		return "";
-	}
-
-	public void setNumeroPortas(int numeroPortas) {
-
-	}
-
-	public int getNumeroPortas() {
-		return 0;
-	}
-
-	public void setSituacaoVeiculo(String situacaoVeiculo) {
-
-	}
-
-	public String getSituacaoVeiculo() {
-		return "";
-	}
-
-	public String listarVeiculosCadastrado() {
-		return "";
-	}
-
-	public String listarVeiculosPorSituacao() {
-		return "";
-	}
-
-	public String listarVeiculosCategoria(String categoria) {
-		return "";
-	}
-
-	public void operation3() {
-
-	}
-
+    /**
+     * @param manutencao the manutencao to set
+     */
+    public void setManutencao(Manutencao manutencao) {
+        this.manutencao = manutencao;
+    }
+    
+    
+   
 }

@@ -8,19 +8,21 @@ package View;
 import classe.Funcioario;
 import javax.swing.JOptionPane;
 import Factory.FacVeiculos;
-import View.*;
+import classe.Veiculo;
+import java.awt.Color;
+import java.util.ArrayList;
 
 /**
  *
  * @author ADM
  */
-public class CadastroVeiculos extends javax.swing.JFrame {
+public class AlterarVeiculo extends javax.swing.JFrame {
 FacVeiculos facVeiculos = new FacVeiculos();
-
+    ArrayList<Veiculo>dadosVeiculo = new ArrayList<Veiculo>();
     /**
      * Creates new form CadastroVeiculos
      */
-    public CadastroVeiculos() {
+    public AlterarVeiculo() {
         initComponents();
     }
 
@@ -75,14 +77,32 @@ FacVeiculos facVeiculos = new FacVeiculos();
 
         jLabel7.setText("Tipo:");
 
-        jButton1.setText("Cadastrar");
+        jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Alterar ");
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField2.setEditable(false);
+        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField4.setEditable(false);
+        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField5.setEditable(false);
+        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField6.setEditable(false);
+        jTextField6.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField7.setEditable(false);
+        jTextField7.setBackground(new java.awt.Color(204, 204, 204));
+
+        jButton2.setText("Pesquisar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -123,19 +143,19 @@ FacVeiculos facVeiculos = new FacVeiculos();
                             .addComponent(jButton1))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6)
-                                    .addComponent(jTextField7)
-                                    .addComponent(jTextField5)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                                 .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextField5)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -176,7 +196,7 @@ FacVeiculos facVeiculos = new FacVeiculos();
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -189,7 +209,7 @@ FacVeiculos facVeiculos = new FacVeiculos();
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -249,7 +269,7 @@ FacVeiculos facVeiculos = new FacVeiculos();
             String tipo = jTextField7.getText();
             String status = (String) jComboBox1.getSelectedItem();
             
-            facVeiculos.cadastrarVeiculo(modelo, marca, placa, ano, descricao, categoria, tipo, status);
+            facVeiculos.alterarVeiculo(modelo, marca, placa, ano, descricao, categoria, tipo, status);
 
             jTextField1.setText("");
             jTextField2.setText("");
@@ -269,19 +289,47 @@ FacVeiculos facVeiculos = new FacVeiculos();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       AlterarVeiculo alterarVeiculo = new AlterarVeiculo();
-       alterarVeiculo.setVisible(true);
-       this.dispose();
+           String placa = jTextField3.getText();
+        
+            jTextField1.setEditable(true);
+            jTextField2.setEditable(true);
+            jTextField3.setEditable(true);
+            jTextField4.setEditable(true);
+            jTextField5.setEditable(true);
+            jTextField6.setEditable(true);
+            jTextField7.setEditable(true);
+            
+            jTextField1.setBackground(Color.yellow);
+            jTextField2.setBackground(Color.yellow);
+            jTextField3.setBackground(Color.yellow);
+            jTextField4.setBackground(Color.yellow);
+            jTextField5.setBackground(Color.yellow);
+            jTextField6.setBackground(Color.yellow);
+            jTextField7.setBackground(Color.yellow);
+            
+            dadosVeiculo = facVeiculos.buscaVeiculoPlaca(placa);
+            
+            for(Veiculo v: dadosVeiculo){
+                 jTextField1.setText(v.getModelo());
+                 jTextField2.setText(v.getMarca());
+                 jTextField3.setText(v.getPlaca());
+                 jTextField4.setText(v.getAno());
+                 jTextField5.setText(v.getDescricao());
+                 jTextField6.setText(v.getCategoria());
+                 jTextField7.setText(v.getTipo());
+                 jComboBox1.setSelectedItem(v.getStatus());
+            }
+            
+            
+            
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        int id = 1;
+        int id = 2;
         ListarVeiculos listarVeiculos = new ListarVeiculos();
         listarVeiculos.interfaceId(id);
         listarVeiculos.setVisible(true);
         this.dispose();
-        
-        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -301,20 +349,21 @@ FacVeiculos facVeiculos = new FacVeiculos();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarVeiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroVeiculos().setVisible(true);
+                new AlterarVeiculo().setVisible(true);
             }
         });
     }

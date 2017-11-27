@@ -9,41 +9,77 @@ public class Abastecimento {
 	private String data;
 
 	private String kmAbasteceimento;
+        
+        private String placaVeiculo;
 
-	public String cadastrarAbastecimento(int idAbastecimento, int qtdLitros, String data, int kmAbastecimento) {
-		return "";
-	}
+    /**
+     * @return the idAbasteciento
+     */
+    public int getIdAbasteciento() {
+        return idAbasteciento;
+    }
 
-	public void setIdAbasteciento(int idAbasteciento) {
+    /**
+     * @param idAbasteciento the idAbasteciento to set
+     */
+    public void setIdAbasteciento(int idAbasteciento) {
+        this.idAbasteciento = idAbasteciento;
+    }
 
-	}
+    /**
+     * @return the qtdLitros
+     */
+    public int getQtdLitros() {
+        return qtdLitros;
+    }
 
-	public int getIdAbasteciento() {
-		return 0;
-	}
+    /**
+     * @param qtdLitros the qtdLitros to set
+     */
+    public void setQtdLitros(int qtdLitros) {
+        this.qtdLitros = qtdLitros;
+    }
 
-	public void setQtdLitros(int qtdLitros) {
+    /**
+     * @return the data
+     */
+    public String getData() {
+        return data;
+    }
 
-	}
+    /**
+     * @param data the data to set
+     */
+    public void setData(String data) {
+        this.data = data;
+    }
 
-	public int getQtdLitros() {
-		return 0;
-	}
+    /**
+     * @return the kmAbasteceimento
+     */
+    public String getKmAbasteceimento() {
+        return kmAbasteceimento;
+    }
 
-	public void setData(String data) {
+    /**
+     * @param kmAbasteceimento the kmAbasteceimento to set
+     */
+    public void setKmAbasteceimento(String kmAbasteceimento) {
+        this.kmAbasteceimento = kmAbasteceimento;
+    }
 
-	}
+    /**
+     * @return the placaVeiculo
+     */
+    public String getPlacaVeiculo() {
+        return placaVeiculo;
+    }
 
-	public String getData() {
-		return "";
-	}
-
-	public void setKmAbasteceimento(String kmAbasteceimento) {
-
-	}
-
-	public String getKmAbasteceimento() {
-		return "";
-	}
-
+    /**
+     * @param placaVeiculo the placaVeiculo to set
+     */
+    public void setPlacaVeiculo(String placaVeiculo) {
+        this.placaVeiculo = placaVeiculo;
+    }
+	
 }

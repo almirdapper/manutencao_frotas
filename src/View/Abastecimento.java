@@ -5,12 +5,18 @@
  */
 package View;
 
+import classe.*;
+import Factory.*;
+import java.util.ArrayList;
+
 /**
  *
  * @author ADM
  */
 public class Abastecimento extends javax.swing.JFrame {
 
+    ArrayList<Veiculo>dadosVeiculo = new ArrayList<Veiculo>();
+    FacVeiculos facVeiculos = new FacVeiculos();
     /**
      * Creates new form aastecimento
      */
@@ -45,6 +51,11 @@ public class Abastecimento extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -160,6 +171,18 @@ public class Abastecimento extends javax.swing.JFrame {
         menuPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       jComboBox1.removeAllItems();
+       
+       dadosVeiculo = facVeiculos.listaPlacaComboboxFac();
+       
+       
+       for(Veiculo v: dadosVeiculo){
+           jComboBox1.addItem(v.getPlaca());
+          
+       }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
