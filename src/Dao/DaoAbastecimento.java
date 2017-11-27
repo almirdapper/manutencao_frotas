@@ -1,6 +1,6 @@
 package Dao;
 
-import View.Abastecimento;
+
 import classe.Veiculo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,7 @@ import javax.swing.JOptionPane;
 import classe.*;
 
 public class DaoAbastecimento {
-    Abastecimento abastecimento = new Abastecimento();
-    ArrayList<Abastecimento> dadosAbastecimentosDao = new ArrayList<Abastecimento>();
+    ArrayList<Abastecimento> dadosAbastecimento = new ArrayList<Abastecimento>();
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -21,7 +20,7 @@ public class DaoAbastecimento {
     }
 
     public void cadatrarAbastecimentoBD(ArrayList dadosVeiculosBD) {
-        dadosAbastecimentosDao = dadosVeiculosBD;
+        dadosAbastecimento= dadosVeiculosBD;
 
         try {
 
@@ -33,15 +32,14 @@ public class DaoAbastecimento {
                     + "kmAbasteceimento)\n"
                     + "values (?,?,?,?);");
 
-            for (Abastecimento a: dadosAbastecimentosDao) {
-                ps.setString(1,  );
-                ps.setString(2, v.getMarca());
-                ps.setString(3, v.getPlaca());
-                ps.setString(4, v.getAno());
-                
-            }
+           for(Abastecimento a: dadosAbastecimento){
+               ps.setString(1, a.getPlacaVeiculo());
+               ps.setInt(2, a.getQtdLitros());
+               ps.setString(3, a.getData());
+               ps.setString(4, a.getKmAbasteceimento());
+           }
             ps.execute();
-            JOptionPane.showMessageDialog(null, "Veiculo Cadastrado com Sucesso!!");
+            JOptionPane.showMessageDialog(null, "Abastecimento Cadastrado com Sucesso!!");
 
         } catch (Exception e) {
         } finally {

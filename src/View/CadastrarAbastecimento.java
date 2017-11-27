@@ -1,28 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package View;
 
 import classe.*;
 import Factory.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ADM
  */
-public class Abastecimento extends javax.swing.JFrame {
-
+public class CadastrarAbastecimento extends javax.swing.JFrame {
+     ArrayList<Abastecimento>dadosAbastecimento = new ArrayList<Abastecimento>();
     ArrayList<Veiculo>dadosVeiculo = new ArrayList<Veiculo>();
     FacVeiculos facVeiculos = new FacVeiculos();
+    FacAbastecimento facAbastecimento = new FacAbastecimento();
     /**
      * Creates new form aastecimento
      */
-    public Abastecimento() {
+  
+   public  CadastrarAbastecimento() {
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,7 +39,7 @@ public class Abastecimento extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -67,7 +67,7 @@ public class Abastecimento extends javax.swing.JFrame {
 
         jLabel5.setText("QTD Litros:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +76,11 @@ public class Abastecimento extends javax.swing.JFrame {
         });
 
         jButton1.setText("Salvar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Listar Abastecimentos");
 
@@ -184,6 +189,42 @@ public class Abastecimento extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_formWindowOpened
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+           String camposOK = "nao";
+        
+        if(jTextField1.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "A KM deve ser Informado!");
+            
+        }else if (jTextField3.getText().trim().equals("")){
+           JOptionPane.showMessageDialog(null, "A QTD litros deve Ser Informada!"); 
+        }else if(jTextField2.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "A data deve ser Informado!");
+        
+        }else {
+            camposOK = "sim";
+        }
+
+        
+        if(camposOK == "sim"){
+       
+        
+        String km = jTextField1.getText();
+        
+        String qtd = jTextField3.getText();
+        String data = jTextField2.getText();
+        String placa = String.valueOf(jComboBox1.getSelectedItem());
+        
+        
+        
+        
+        
+        jTextField1.setText("");
+        jTextField3.setText("");
+        jTextField2.setText("");
+        
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -201,21 +242,23 @@ public class Abastecimento extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Abastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarAbastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Abastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarAbastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Abastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarAbastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Abastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastrarAbastecimento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Abastecimento().setVisible(true);
+                new CadastrarAbastecimento().setVisible(true);
             }
         });
     }

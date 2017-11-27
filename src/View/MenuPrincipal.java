@@ -365,8 +365,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       Abastecimento abastecimento = new Abastecimento();
-       abastecimento.setVisible(true);
+       CadastrarAbastecimento cadastrarAbastecimento = new CadastrarAbastecimento();
+       cadastrarAbastecimento.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 

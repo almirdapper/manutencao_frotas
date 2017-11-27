@@ -12,6 +12,9 @@ public class Abastecimento {
         
         private String placaVeiculo;
 
+         public Abastecimento() {
+       
+    }
     /**
      * @return the idAbasteciento
      */
