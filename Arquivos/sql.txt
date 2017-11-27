@@ -1,0 +1,203 @@
+create database manutencao_frotas;
+
+use manutencao_frotas;
+
+SET SQL_SAFE_UPDATES=0;
+
+SET SQL_SAFE_UPDATES=0;
+
+CREATE TABLE Abastecimento (
+ idAbasteciento INT auto_increment primary key,
+ placaVeiculo char(7),
+ qtdLitros INT,
+ data CHAR(10),
+ kmAbasteceimento CHAR(10)
+);
+
+select * from abastecimento;
+
+insert into abastecimento 
+(placaVeiculo,
+qtdlitros,
+data,
+kmAbasteceimento)
+values ('123',12,'12','123456');
+
+drop table abastecimento;
+
+
+CREATE TABLE CategoriaVeiculo (
+ idCategoria INT,
+ descricaoCategoria CHAR(10)
+);
+
+
+
+
+CREATE TABLE ModeloVeiculo (
+ idModelo INT,
+ descricaoModelo CHAR(10)
+);
+
+
+CREATE TABLE OrdemDeServico (
+ idOs INT,
+ data CHAR(10),
+ idVeiculo  CHAR(10),
+ status CHAR(10)
+);
+
+
+CREATE TABLE Percurso (
+ idPercurso INT,
+ dataSaida CHAR(10),
+ horaSaida CHAR(10),
+ kmSaida INT,
+ trajeto CHAR(10),
+ horaPrevistaChegada CHAR(10),
+ dataPrevistaChegada CHAR(10),
+ kmChegada INT,
+ horaChegada CHAR(10),
+ dataCheada CHAR(10),
+ status CHAR(10),
+ observacao CHAR(10)
+);
+
+
+CREATE TABLE Servico (
+ idServico INT,
+ descricaoServico CHAR(10)
+);
+
+
+CREATE TABLE situacaoVeiculo (
+ idSituacao INT,
+ descricaoSituacao CHAR(10)
+);
+
+
+CREATE TABLE TipoVeiculo (
+ idTipo INT,
+ descricaoTipo CHAR(10)
+);
+
+
+CREATE TABLE Veiculo (
+ idVeiculo int(100) primary key auto_increment,
+ modelo char(30),
+ marca char(30),
+ placa char(30),
+ ano char(30),
+ descricao char(30),
+ categoria char(30),
+ tipo char(30),
+ statusVeiculo char(30),
+ manutencao char(30)
+);
+
+insert into Veiculo (
+modelo, 
+marca, 
+placa, 
+ano, 
+descricao,
+categoria, 
+tipo,
+statusVeiculo, 
+manutencao)
+values ('ttt','bbb','Volksagem','123','teste','teste2','tipoteste','testestatus','testemn');
+
+select idVeiculo,
+modelo,
+marca,
+placa,
+ano,
+descricao,
+categoria,
+tipo,
+statusVeiculo
+from veiculo;
+where placa = 111111 ; 
+
+select * from veiculo;
+
+update veiculo set 
+modelo = 't',
+marca= 't',
+placa= 't',
+ano= 't',
+descricao= 't',
+categoria= 't', 
+tipo= 't',
+statusVeiculo = 't'
+where placa = '111111';
+
+select placa from veiculo;
+
+
+CREATE TABLE Funcioario (
+ idUsuario  int(100) primary key auto_increment,
+ nomeUsuario char(10),
+ situacao char(10),
+ funcao char(10),
+ login char(10),
+ senha char(10),
+ cnh INT,
+ categoriaCnh CHAR(10),
+ celular INT 
+);
+
+drop table funcioario;
+
+CREATE TABLE ItemOs (
+ idItem INT,
+ descricaoItem CHAR(10)
+);
+
+
+CREATE TABLE Manutencao (
+ idManutencao INT,
+ descricaoManutencao CHAR(10),
+ tipoManutencao CHAR(10),
+ dataManutencao CHAR(10),
+ carroManutencao CHAR(10),
+ statusManutencao CHAR(10)
+);
+
+
+CREATE TABLE Condutor (
+ cnh INT,
+ categoriaCnh CHAR(10),
+ celular INT,
+ situacao CHAR(10)
+);
+
+truncate funcioario;
+
+select * from funcioario;
+
+select idUsuario as 'ID:',
+ nomeUsuario as 'Nome:',
+ situacao as 'Situação atual:', 
+ funcao as 'Função Exercida:',
+ login as 'Login de Acesso:'
+ from funcioario where idUsuario = 2;
+					
+use manutencao_frotas;  
+
+select idUsuario,
+                                       nomeUsuario,
+                                      situacao,
+                                      funcao ,
+                                      cnh,
+                                      categoriaCnh,
+                                      celular
+                                      from funcioario where cnh!= 'null' ; 
+                                      
+ update funcioario set nomeUsuario =' ', 
+ situacao = '',
+ funcao='',
+ login='',
+ senha=''
+ where idUsuario=1;
+                                      
