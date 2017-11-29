@@ -14,6 +14,7 @@ public class DaoAbastecimento {
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
+    Abastecimento abastecimento = new Abastecimento();
 
     public void DaoAbastecimento() {
 
@@ -55,6 +56,48 @@ public class DaoAbastecimento {
             }
         }
 
+    }
+    
+     public ArrayList listarAbastecimentoBD() {
+        try {
+            
+            conn = ConexaoBD.getConnection();
+            ps = conn.prepareStatement("select idAbasteciento, placaVeiculo, qtdLitros,data,kmAbasteceimento  from abastecimento;");
+            
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                 
+                abastecimento.setIdAbasteciento(rs.getInt("idAbasteciento"));
+                abastecimento.setPlacaVeiculo(rs.getString("placaVeiculo"));
+                abastecimento.setQtdLitros(rs.getInt("qtdLitros"));
+                abastecimento.setData(rs.getString("data"));
+                abastecimento.setKmAbasteceimento(rs.getString("kmAbasteceimento"));
+                
+                dadosAbastecimento.add(abastecimento);
+                
+            }
+            
+            ps.execute();
+            
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+        
+        return dadosAbastecimento;
     }
 
 }

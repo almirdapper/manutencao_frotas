@@ -5,6 +5,7 @@ import classe.*;
 import Factory.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import View.*;
 
 /**
  *
@@ -15,6 +16,7 @@ public class CadastrarAbastecimento extends javax.swing.JFrame {
     ArrayList<Veiculo>dadosVeiculo = new ArrayList<Veiculo>();
     FacVeiculos facVeiculos = new FacVeiculos();
     FacAbastecimento facAbastecimento = new FacAbastecimento();
+    
     /**
      * Creates new form aastecimento
      */
@@ -83,6 +85,11 @@ public class CadastrarAbastecimento extends javax.swing.JFrame {
         });
 
         jButton2.setText("Listar Abastecimentos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Sair");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -190,11 +197,10 @@ public class CadastrarAbastecimento extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           String camposOK = "nao";
+        String camposOK = "nao";
         
         if(jTextField1.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "A KM deve ser Informado!");
-            
         }else if (jTextField3.getText().trim().equals("")){
            JOptionPane.showMessageDialog(null, "A QTD litros deve Ser Informada!"); 
         }else if(jTextField2.getText().trim().equals("")){
@@ -210,10 +216,11 @@ public class CadastrarAbastecimento extends javax.swing.JFrame {
         
         String km = jTextField1.getText();
         
-        String qtd = jTextField3.getText();
+        int qtd = Integer.parseInt(jTextField3.getText());
         String data = jTextField2.getText();
         String placa = String.valueOf(jComboBox1.getSelectedItem());
         
+        facAbastecimento.cadastrarAbastecimentoFac(qtd,  data, km, placa);
         
         
         
@@ -224,6 +231,12 @@ public class CadastrarAbastecimento extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+      ListarAbastecimentos listarAbastecimentos = new ListarAbastecimentos();
+        listarAbastecimentos.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

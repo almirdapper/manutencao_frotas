@@ -14,8 +14,8 @@ public class FacAbastecimento {
         
     }
     
-    public void cadastrarAbastecimentoFac(int idAbasteciento, int qtdLitros,  String data , String kmAbasteceimento,  String placaVeiculo){
-        abastecimento.setIdAbasteciento(idAbasteciento);
+    public void cadastrarAbastecimentoFac( int qtdLitros,  String data , String kmAbasteceimento,  String placaVeiculo){
+      
         abastecimento.setQtdLitros(qtdLitros);
         abastecimento.setData(data);
         abastecimento.setKmAbasteceimento(kmAbasteceimento);
@@ -23,5 +23,12 @@ public class FacAbastecimento {
         dadosAbastecimento.add(abastecimento);
         
         daoAbastecimento.cadatrarAbastecimentoBD(dadosAbastecimento);
+    }
+    
+    public ArrayList listarAbastecimento(){
+        
+        dadosAbastecimento = daoAbastecimento.listarAbastecimentoBD();
+        
+        return  dadosAbastecimento;
     }
 }
