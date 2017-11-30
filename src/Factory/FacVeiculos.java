@@ -3,7 +3,7 @@ import classe.Veiculo;
 import java.util.ArrayList;
 import Dao.DaoVeiculos;
 
-public class FacVeiculos {
+public class FacVeiculos  implements Listar{
 
     Veiculo veiculo = new Veiculo();
     DaoVeiculos daoVeiculos = new DaoVeiculos();
@@ -53,15 +53,20 @@ public class FacVeiculos {
         daoVeiculos.alterarVeiculoBD(dadosVeiculoFac);
     }
     
-    public ArrayList listarVeiculosFac (){
-        
-        dadosVeiculoFac = daoVeiculos.listarVeiculosBD();
-        
-        return dadosVeiculoFac;
-    }
+ 
     
     public ArrayList listaPlacaComboboxFac(){
         dadosVeiculoFac = daoVeiculos.listarPlacaComboboxBD();
         return dadosVeiculoFac;
     }
+
+    @Override
+    public ArrayList listar() {
+      
+         dadosVeiculoFac = daoVeiculos.listarVeiculosBD();
+        
+        return dadosVeiculoFac;
+    }
+
+  
 }

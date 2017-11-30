@@ -337,7 +337,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Manutencao manutencao = new Manutencao();
+        CadastrarManutencao manutencao = new CadastrarManutencao();
         manutencao.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -371,7 +371,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       OrdemdeServico ordemdeServico = new OrdemdeServico();
+       CadastrarOrdemdeServico ordemdeServico = new CadastrarOrdemdeServico();
        ordemdeServico.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton9ActionPerformed

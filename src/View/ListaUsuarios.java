@@ -105,7 +105,7 @@ public class ListaUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        dadosFunconarios= facFuncionarios.listarUsuario();
+        dadosFunconarios= facFuncionarios.listar();
         
         for(Funcioario f: dadosFunconarios){
             jTextArea1.append("ID Usuário: "+f.getIdUsuario()+"\n"+

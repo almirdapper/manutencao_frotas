@@ -5,7 +5,7 @@ import classe.*;
 import Dao.*;
 import java.util.ArrayList;
 
-public class FacAbastecimento {
+public class FacAbastecimento implements Listar{
     Abastecimento abastecimento = new Abastecimento();
     DaoAbastecimento daoAbastecimento = new DaoAbastecimento();
     ArrayList<Abastecimento> dadosAbastecimento = new ArrayList<Abastecimento>();
@@ -25,10 +25,14 @@ public class FacAbastecimento {
         daoAbastecimento.cadatrarAbastecimentoBD(dadosAbastecimento);
     }
     
-    public ArrayList listarAbastecimento(){
-        
+ 
+
+    @Override
+    public ArrayList listar() {
         dadosAbastecimento = daoAbastecimento.listarAbastecimentoBD();
         
         return  dadosAbastecimento;
     }
+
+
 }

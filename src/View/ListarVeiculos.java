@@ -120,7 +120,7 @@ public class ListarVeiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        dadosVeiculo = facVeiculos.listarVeiculosFac();
+        dadosVeiculo = facVeiculos.listar();
 
         for (Veiculo v : dadosVeiculo) {
             jTextArea1.append("ID Veiculo: " + v.getIdVeiculo() + "\n"

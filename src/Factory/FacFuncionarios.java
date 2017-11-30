@@ -7,7 +7,7 @@ import Dao.*;
 import javax.swing.JOptionPane;
 
 
-public class FacFuncionarios {
+public class FacFuncionarios implements Listar{
     DaoFuncionarios daoFuncionarios = new DaoFuncionarios();
     Funcioario funcioario;
     ArrayList<Funcioario>arrayDadosFuncionario = new ArrayList<Funcioario>();
@@ -74,13 +74,17 @@ public class FacFuncionarios {
      }
      
      
-     public ArrayList listarUsuario(){
-         arrayDadosFuncionario = daoFuncionarios.listarFuncionariosBD();
-         return arrayDadosFuncionario;
-     }
-     
+    
      public ArrayList listarCondutor(){
          arrayDadosFuncionario = daoFuncionarios.listarCondutorBD();
          return arrayDadosFuncionario;
      }
+
+    @Override
+    public ArrayList listar() {
+        arrayDadosFuncionario = daoFuncionarios.listarFuncionariosBD();
+         return arrayDadosFuncionario;
+    }
+
+
 }

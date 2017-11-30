@@ -6,48 +6,99 @@ public class OrdemDeServico {
 
 	private String data;
 
-	private int idVeiculo ;
+	private int placaVeiculo;
 
 	private String status;
+        
+        private String itemOS;
+        
+        private String servico;
 
-	public void cadastrarOs(int idOs, String data, int idVeiculo, String status) {
+    /**
+     * @return the idOs
+     */
+    public int getIdOs() {
+        return idOs;
+    }
 
-	}
+    /**
+     * @param idOs the idOs to set
+     */
+    public void setIdOs(int idOs) {
+        this.idOs = idOs;
+    }
 
-	public void alerarOs(int idOs, String data, int idVeiculo, String status) {
+    /**
+     * @return the data
+     */
+    public String getData() {
+        return data;
+    }
 
-	}
+    /**
+     * @param data the data to set
+     */
+    public void setData(String data) {
+        this.data = data;
+    }
 
-	public void setIdOs(int idOs) {
+    /**
+     * @return the placaVeiculo
+     */
+    public int getPlacaVeiculo() {
+        return placaVeiculo;
+    }
 
-	}
+    /**
+     * @param placaVeiculo the placaVeiculo to set
+     */
+    public void setPlacaVeiculo(int placaVeiculo) {
+        this.placaVeiculo = placaVeiculo;
+    }
 
-	public int getIdOs() {
-		return 0;
-	}
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
 
-	public void setData(String data) {
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	}
+    /**
+     * @return the itemOS
+     */
+    public String getItemOS() {
+        return itemOS;
+    }
 
-	public String getData() {
-		return "";
-	}
+    /**
+     * @param itemOS the itemOS to set
+     */
+    public void setItemOS(String itemOS) {
+        this.itemOS = itemOS;
+    }
 
-	public void setIdVeiculo(int idVeiculo) {
+    /**
+     * @return the servico
+     */
+    public String getServico() {
+        return servico;
+    }
 
-	}
-
-	public int getIdVeiculot() {
-		return 0;
-	}
-
-	public void setStatus(String status) {
-
-	}
-
-	public String getStatus() {
-		return "";
-	}
+    /**
+     * @param servico the servico to set
+     */
+    public void setServico(String servico) {
+        this.servico = servico;
+    }
+        
+        
+        
 
 }

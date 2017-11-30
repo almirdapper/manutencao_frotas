@@ -10,9 +10,11 @@ public class Manutencao {
 
 	private String dataManutencao;
 
-	private String carroManutencao;
+	private String numeroOS;
 
 	private String statusManutencao;
+        
+        private String placa;
 
 	public void cadastrarManutencao(int idManutencao, String descricaoManutencao, String tipoManutencao, String dataManutencao, String carroMautencao, String statusManutencao) {
 
@@ -81,5 +83,47 @@ public class Manutencao {
 	public String listarManutencaoCorretiva() {
 		return "";
 	}
+
+    /**
+     * @return the numeroOS
+     */
+    public String getNumeroOS() {
+        return numeroOS;
+    }
+
+    /**
+     * @param numeroOS the numeroOS to set
+     */
+    public void setNumeroOS(String numeroOS) {
+        this.numeroOS = numeroOS;
+    }
+
+    /**
+     * @return the placa
+     */
+    public String getPlaca() {
+        return placa;
+    }
+
+    /**
+     * @param placa the placa to set
+     */
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    /**
+     * @return the statusManutencao
+     */
+    public String getStatusManutencao() {
+        return statusManutencao;
+    }
+
+    /**
+     * @param statusManutencao the statusManutencao to set
+     */
+    public void setStatusManutencao(String statusManutencao) {
+        this.statusManutencao = statusManutencao;
+    }
 
 }
