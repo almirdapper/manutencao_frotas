@@ -26,4 +26,8 @@ public class ItemOs {
 		return "";
 	}
 
+    public void setDescricaoItem(String[] str) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

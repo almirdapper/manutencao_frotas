@@ -6,13 +6,15 @@ public class OrdemDeServico {
 
 	private String data;
 
-	private int placaVeiculo;
+	private String  placaVeiculo;
 
 	private String status;
         
         private String itemOS;
         
         private String servico;
+        
+        private String observacao;
 
     /**
      * @return the idOs
@@ -45,14 +47,14 @@ public class OrdemDeServico {
     /**
      * @return the placaVeiculo
      */
-    public int getPlacaVeiculo() {
+    public String getPlacaVeiculo() {
         return placaVeiculo;
     }
 
     /**
      * @param placaVeiculo the placaVeiculo to set
      */
-    public void setPlacaVeiculo(int placaVeiculo) {
+    public void setPlacaVeiculo(String placaVeiculo) {
         this.placaVeiculo = placaVeiculo;
     }
 
@@ -96,6 +98,20 @@ public class OrdemDeServico {
      */
     public void setServico(String servico) {
         this.servico = servico;
+    }
+
+    /**
+     * @return the observacao
+     */
+    public String getObservacao() {
+        return observacao;
+    }
+
+    /**
+     * @param observacao the observacao to set
+     */
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
         
         
